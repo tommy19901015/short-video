@@ -1,0 +1,81 @@
+body {
+  font-family: Microsoft JhengHei;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #000;
+  .App {
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 414px; // iphone XR
+    .video-list {
+      width: 100%;
+      position: relative;
+      .tabBlock {
+        width: 100%;
+        position: absolute;
+        top: 10px;
+        display: flex;
+        z-index: 1;
+        justify-content: center;
+        .text {
+          color: #000;
+          font-size: 18px;
+          font-weight: 900;
+          padding: 10px;
+          cursor: pointer;
+          word-break: keep-all;
+          white-space: nowrap;
+          opacity: 0.4;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      .listBlock {
+        &.hide {
+          display: none;
+        }
+        .slick-list {
+          height: 100%;
+          .LoadingBlock {
+            color: #fff;
+            padding-top: 50vh;
+            text-align: center;
+          }
+          .slick-slide {
+            .video-item {
+              position: relative;
+              video {
+                width: 100%;
+                object-fit: cover;
+                min-height: calc(100vh - vh);
+                height: calc(100vh - 25vw);
+              }
+              .progressbar {
+                position: absolute;
+                width: 80%;
+                bottom: 30px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+              .coverBlock {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                min-height: calc(100vh - vh);
+                height: calc(100vh - 25vw);
+                z-index: 2;
+                &.hide {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
